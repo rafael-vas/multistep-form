@@ -35,11 +35,11 @@ Users should be able to:
 
 #### Desktop
 
-<img src="design/desktop-design.jpg" alt="Desktop Design">
+<img src="design/desktop-design-step-1.jpg" alt="Desktop Design">
 
 #### Mobile
 
-<img src="design/mobile-design.jpg" alt="Desktop Design" width="375">
+<img src="design/mobile-design-step-1.jpg" alt="Desktop Design" width="375">
 
 ### Links
 [Click Here to Access Website](https://rafael-vas.github.io/multistep-form//)

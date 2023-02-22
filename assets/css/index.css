@@ -113,6 +113,10 @@ body {
   padding-bottom: 20px;
 }
 
+.container .sections .buttons.hidden {
+  display: none;
+}
+
 .container .sections .buttons .btn.next {
   background-color: var(--primary-marine-blue);
   padding: 13px 20px;
@@ -234,6 +238,7 @@ body {
 }
 
 .container .sections .your-info form .field input:focus {
+  background-color: var(--neutral-alabaster);
   border-color: var(--primary-purple);
 }
 

@@ -1,0 +1,105 @@
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        position: relative;
+        padding-bottom: 70px;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-top: 140px;
+        height: fit-content;
+        margin-bottom: 80px;
+        /* height: 670px; */
+    }
+
+    .container .steps {
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        height: 300px;
+        width: 100vw;
+        position: absolute;
+        background-image: url(../images/bg-sidebar-mobile.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        align-items: start;
+        justify-content: center;
+        border-radius: 0;
+        gap: 20px;
+    }
+
+
+    .container .steps .step::after {
+        display: none;
+    }
+
+    .container .steps .step .content {
+        display: none;
+    }
+
+    .container .sections {
+        position: static;
+        flex-basis: auto;
+    }
+
+    .container .sections .section {
+        position: static;
+        gap: 30px;
+        padding: 20px 15px;
+    }
+
+    .container .sections .your-info form .field input {
+        border-radius: 5px;
+    }
+
+    .container .sections .buttons {
+        display: grid;
+        background-color: var(--neutral-white);
+        padding: 20px 25px;
+        justify-content: unset;
+        grid-template-areas:
+        "back next";
+    }
+
+    .container .sections .buttons .btn.next {
+        position: static;
+        right: 10px;
+        border-radius: 5px;
+        justify-self: flex-end;
+        grid-area: next;
+    }
+
+    .container .sections .buttons .btn.back {
+        position: static;
+        padding: 13px 20px;
+        left: 10px;
+        border-radius: 5px;
+        justify-self: flex-start;
+        grid-area: back;
+    }
+}
+
+@media screen and (max-width: 568px) {
+
+    .container .sections .select-plan .plans {
+        flex-direction: column;
+    }
+
+    .container .sections .select-plan .plans .plan {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .container .sections .add-ons .services .service .content {
+        margin-right: 70px
+    }
+}

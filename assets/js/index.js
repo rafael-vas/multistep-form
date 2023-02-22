@@ -1,4 +1,5 @@
 const sections = document.querySelectorAll(".section");
+const btns = document.querySelector(".buttons")
 const nextBtn = document.querySelector(".next.btn");
 const backBtn = document.querySelector(".back.btn");
 const steps = document.querySelectorAll(".step");
@@ -27,7 +28,14 @@ customPrice.value = 2;
 
 let currentSection = 0;
 
+
+inputs.forEach(input => {
+    input.addEventListener("change", formValidation)
+})
+
+
 nextBtn.addEventListener("click", () => {
+
   if (currentSection === 0) {
     formValidation();
     for (let i = 0; i <= inputs.length - 1; i++) {
@@ -44,6 +52,7 @@ nextBtn.addEventListener("click", () => {
   }
 
   if (currentSection === sections.length - 1) {
+    btns.classList.add("hidden")
     nextBtn.classList.add("hidden");
     backBtn.classList.add("hidden");
   }
@@ -124,7 +133,7 @@ nextBtn.addEventListener("click", () => {
     }
 
     const sum = parseInt(
-      chosenPlanPrice.value +
+        chosenPlanPrice.value +
         chosenFirstServicePrice.value +
         chosenSecondServicePrice.value +
         chosenThirdServicePrice.value
@@ -139,6 +148,7 @@ nextBtn.addEventListener("click", () => {
 
   hideShownSection();
   showNextSection();
+
 });
 
 backBtn.addEventListener("click", () => {
@@ -248,9 +258,12 @@ changePlan.addEventListener("click", () => {
   for (let i = 0; i <= sections.length - 1; i++) {
     if (i !== 1) {
       sections[i].classList.add("hidden");
+      steps[i].classList.remove("active");
     } else {
       sections[i].classList.remove("hidden");
+      steps[i].classList.add("active")
       currentSection = 1;
+
     }
   }
 });
@@ -277,8 +290,13 @@ function hideShownSection() {
 }
 
 function showNextSection() {
-  sections[currentSection].classList.remove("hidden");
-  steps[currentSection].classList.add("active");
+    if (currentSection === sections.length - 1) {
+        sections[currentSection].classList.remove("hidden");
+        return;
+    } else {
+        sections[currentSection].classList.remove("hidden");
+        steps[currentSection].classList.add("active");
+    }
 }
 
 function formValidation() {

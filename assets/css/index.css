@@ -229,6 +229,10 @@ body {
   font-weight: 700;
 }
 
+.container .sections .your-info form .field input.wrong {
+  border: 2px solid #e00d0d;
+}
+
 .container .sections .your-info form .field input:focus {
   border-color: var(--primary-purple);
 }
@@ -252,10 +256,16 @@ body {
   padding: 20px 15px;
   border: 1px solid var(--neutral-light-gray);
   border-radius: 10px;
+  transition: .15s ease-in-out;
+}
+
+.container .sections .select-plan .plans .plan:hover {
+  border: 1px solid var(--primary-purple);
+  cursor: pointer;
 }
 
 .container .sections .select-plan .plans .plan.active {
-  border: 1px solid var(--primary-marine-blue);
+  border: 1px solid var(--primary-purple);
   background: var(--neutral-alabaster);
 }
 
@@ -275,7 +285,14 @@ body {
   color: var(--neutral-gray);
 }
 
-.container .sections .select-plan .period {
+.container .sections .select-plan .plans .plan .promo {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--primary-purple);
+}
+
+.container .sections .select-plan .periods {
   background-color: var(--neutral-alabaster);
   display: flex;
   align-items: center;
@@ -283,16 +300,17 @@ body {
   gap: 20px;
 }
 
-.container .sections .select-plan .period .monthly,
-.container .sections .select-plan .period .yearly {
-  font-weight: 700;
+.container .sections .select-plan .periods .period.active {
+  color: var(--primary-marine-blue);
 }
 
-.container .sections .select-plan .period .yearly {
+.container .sections .select-plan .periods .period {
+  font-weight: 700;
   color: var(--neutral-gray);
 }
 
-.container .sections .select-plan .period .toggle {
+.container .sections .select-plan .periods .toggle {
+  cursor: pointer;
   width: 55px;
 }
 
@@ -310,9 +328,16 @@ body {
   gap: 20px;
   border: 1px solid var(--neutral-light-gray);
   border-radius: 10px;
+  transition: 0.15s ease-in-out;
+}
+
+.container .sections .add-ons .services .service:hover {
+  cursor: pointer;
+  border: 1px solid var(--primary-purple);
 }
 
 .container .sections .add-ons .services .service.active {
+  cursor: pointer;
   border: 1px solid var(--primary-purple);
   background-color: var(--neutral-alabaster);
 }
@@ -398,7 +423,8 @@ body {
 }
 
 .container .sections .summary .purchase-summary .chosen-services .chosen-1,
-.container .sections .summary .purchase-summary .chosen-services .chosen-2 {
+.container .sections .summary .purchase-summary .chosen-services .chosen-2,
+.container .sections .summary .purchase-summary .chosen-services .chosen-3 {
   display: flex;
   justify-content: space-between;
 }
@@ -416,6 +442,13 @@ body {
   .purchase-summary
   .chosen-services
   .chosen-2
+  .type,
+.container
+  .sections
+  .summary
+  .purchase-summary
+  .chosen-services
+  .chosen-3
   .type,
 .container
   .sections
@@ -476,13 +509,4 @@ body {
   margin-top: 2px;
   color: var(--neutral-gray);
   line-height: 22px;
-}
-
-.footer .attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.footer .attribution a {
-  color: hsl(228, 45%, 44%);
 }

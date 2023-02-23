@@ -42,6 +42,7 @@ nextBtn.addEventListener("click", () => {
       if (inputs[i].classList.contains("wrong")) {
         return;
       }
+
     }
   }
 
@@ -305,26 +306,57 @@ function formValidation() {
   const inputName = document.querySelector("input#name");
   const inputEmail = document.querySelector("input#email");
   const inputPhone = document.querySelector("input#phone");
+  const fieldName = document.querySelector(".name.field")
+  const fieldEmail = document.querySelector(".email.field")
+  const fieldPhone = document.querySelector(".phone.field")
 
   if (inputName.value === "") {
-    inputName.classList.add("wrong");
+    if (document.querySelector(".field.name .warning")) {
+      warningName = null
+    } else {
+      let warningName = document.createElement("p")
+      warningName.classList.add("warning")
+      warningName.innerText = "Please enter a valid name"
+      fieldName.appendChild(warningName)
+      inputName.classList.add("wrong");
+    }
   } else {
+    warningName = document.querySelectorAll(".field.name .warning");
+    warningName.forEach(warning => warning.remove())
     inputName.classList.remove("wrong");
   }
 
   if (!inputEmail.value.includes("@") || !inputEmail.value.includes(".com")) {
-    inputEmail.classList.add("wrong");
+    if (document.querySelector(".field.email .warning")) {
+      warningEmail = null
+    } else {
+      let warningEmail = document.createElement("p")
+      warningEmail.classList.add("warning")
+      warningEmail.innerText = "Please enter a valid email address"
+      fieldEmail.appendChild(warningEmail)
+      inputEmail.classList.add("wrong");
+    }
   } else {
+    warningEmail = document.querySelectorAll(".field.email .warning");
+    warningEmail.forEach(warning => warning.remove())
     inputEmail.classList.remove("wrong");
   }
 
   if (
-    isNaN(inputPhone.value) ||
-    inputPhone.value === "" ||
-    inputPhone.value.length < 9
+    isNaN(inputPhone.value) || inputPhone.value === "" || inputPhone.value.length < 9
   ) {
-    inputPhone.classList.add("wrong");
+    if (document.querySelector(".field.phone .warning")) {
+      warningPhone = null
+    } else {
+      let warningPhone = document.createElement("p")
+      warningPhone.classList.add("warning")
+      warningPhone.innerText = "Please enter a valid phone number"
+      fieldPhone.appendChild(warningPhone)
+      inputPhone.classList.add("wrong");
+    }
   } else {
+    warningPhone = document.querySelectorAll(".field.phone .warning");
+    warningPhone.forEach(warning => warning.remove())
     inputPhone.classList.remove("wrong");
   }
 }

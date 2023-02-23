@@ -213,9 +213,18 @@ body {
 }
 
 .container .sections .your-info form .field {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.container .sections .your-info form .field p.warning {
+  position: absolute;
+  bottom: -15px;
+  left: 1px;
+  color: #e00d0d;
+  font-size: 12px;
 }
 
 .container .sections .your-info form .field label {

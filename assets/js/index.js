@@ -260,6 +260,8 @@ changePlan.addEventListener("click", () => {
       sections[i].classList.add("hidden");
       steps[i].classList.remove("active");
     } else {
+      nextBtn.innerText = "Next Step";
+      nextBtn.classList.remove("purplish");
       sections[i].classList.remove("hidden");
       steps[i].classList.add("active")
       currentSection = 1;
